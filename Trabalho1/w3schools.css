@@ -1,0 +1,208 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header .logo h1{
+  color: green;
+  font-weight: bold;
+}
+
+header .logo{
+  padding: 10px;
+}
+
+header .logo-descricao{
+  float: right;
+  position: relative;
+  bottom: 30px;
+  right: 20px;
+  font-size: 20px;
+  color: #7d7979;
+  font-weight: bold;
+}
+
+.nav_superior{
+  background-color: #175803;
+  overflow: auto;
+  width: 100%;
+}
+
+.nav_superior > ul{
+  list-style: none;
+}
+
+/*------------------------- CSS Dropdown */
+
+.nav_superior .dropdown{
+  float: left;
+  padding: 20px;
+  color: white;
+}
+
+.dropdown-button{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-button:hover{
+  background-color: #FFF;
+  color: black;
+}
+
+.dropdown-content{
+  position: absolute;
+  color: black;
+  background: rgb(183, 177, 177);
+  max-height: 0px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.dropdown:hover .dropdown-button + .dropdown-content{
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.dropdown .dropdown-content .content{
+  float: left;
+  margin: 5px;
+  padding: 10px;
+}
+
+.dropdown .dropdown-content .content > ul{
+  list-style: none;
+}
+
+.dropdown .dropdown-content .content > ul > li > a{
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  max-height: 0px;
+}
+
+.dropdown:hover .dropdown-content .content > ul > li > a{
+  max-height: 100px;
+  transition: max-height 2s;
+}
+
+.dropdown .dropdown-content .content > ul > li > a:hover{
+  background-color: white;
+  color: black;
+}
+
+/*------------------------- The End CSS Dropdown, Begin CSS nav-vertical */
+
+.nav-vertical{
+  background-color: rgb(183, 177, 177);
+  width: 20%;
+  float: left;
+  box-shadow: 2px 1px 2px rgba(134, 119, 119, 0.88);
+  position: relative;
+  z-index: -999;
+}
+
+.nav-vertical .content{
+  padding: 15px;
+}
+
+
+.nav-vertical .content > ul{
+    list-style: none;
+}
+
+.nav-vertical .content > ul > li > a{
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-vertical .content > ul > li > a:hover{
+  background-color: white;
+  color: black;
+}
+/*------------------------- The End CSS nav-vertical, Begin CSS nav-vertical-direita */
+
+.nav-vertical-direita{
+  background: linear-gradient(to left, #e2e0e0, #f3f3f3);
+  width: 15%;
+  float: left;
+  box-shadow: -2px 1px 2px rgba(134, 119, 119, 0.88);
+}
+
+.nav-vertical-direita .content{
+  padding: 15px;
+}
+
+.nav-vertical-direita .content > ul{
+    list-style: none;
+}
+
+.nav-vertical-direita .content > ul > li > a{
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  text-align: center
+}
+
+.nav-vertical-direita .content > ul > li > a:hover{
+  color: green;
+  text-decoration: underline;
+}
+
+/*------------------------- The End CSS nav-vertical-direita, Begin @KeyFrames */
+
+@keyframes box-animacao {
+  100%{
+    -webkit-transform: rotate(360deg); transform:rotate(360deg);
+  }
+}
+
+.conteudo-meio{
+  width: 65%;
+  float: left;
+}
+
+#box-animacao{
+  margin-left: 45%;
+  margin-top: 30%;
+}
+
+#box-animacao img{
+  width: 30%;
+  animation: box-animacao 4s linear infinite;
+}
+
+/*------------------------- The End CSS @KeyFrames, Begin @MediaQuires */
+
+@media screen and (max-width: 600px){
+  .nav_superior{
+    width: 100%;
+  }
+
+  .nav-vertical{
+    width: 100%;
+  }
+
+  .conteudo-meio{
+    width: 100%;
+  }
+
+  .nav-vertical-direita{
+    width: 100%;
+
+  }
+
+  .logo-descricao{
+    display: none;
+  }
+
+  #box-animacao img{
+    margin-bottom: 40%;
+  }
+}

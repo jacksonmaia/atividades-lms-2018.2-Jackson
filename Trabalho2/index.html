@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trabalho 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="amigos" id="amigo">
+            <header>
+                <div class="header-parte1"><img src="user.png" /></div>
+                <h4>Jackson Maia</h4>
+                <a href="#openModal" class="bot-entrar">Entrar</a>
+            </header>
+            <div class="pesquisa">
+                <input type="text" placeholder="Procurar ou começar conversa" />
+                <input type="text" placeholder="Procurar ou começar conversa" /> 
+            <button class="bot-criar">Criar grupo</button>    
+            </div>
+           
+            <div class="lista" id="lista">
+
+
+            </div>
+        </div>
+        <div class="conversas">
+            <div class="conversa">
+                <header>
+                    <div class="header-parte1"><img src="user.png" /></div>
+                    <label class="titulo-nome">Nome Sobre</label>
+                </header>
+                <div class="chat" id="chat">
+
+                </div>
+                <div class="text">
+                    <img src="icon.png" />
+                    <form>
+                        <textarea></textarea>
+                        <button class="bot-enviar">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<div id="openModal" class="modalDialog">
+    <div style="text-align: center;">
+        <a href="#close" title="Close" class="closeModal"></a>
+        <!-- Conteúdo do Modal -->
+        <h2>Logar no sistema</h2>
+        <form>
+            <input type="text" class="input-logar" placeholder="Insira ID do Usuario">
+            <button class="bot-logar">Entrar no sistema</button>
+        </form>
+        <hr>
+        <!-- Conteúdo do Modal -->
+    </div>
+</div>
+
+</html>

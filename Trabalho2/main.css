@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+}
+
+.container{
+    width: 900px;
+    margin: auto;
+    background: red;
+}
+.amigos{
+    float: left;
+    width: 30%;
+    border-bottom-width: 1px;
+    border-color: #ecedec63;
+    border-style: solid;
+    height: 500px;
+}
+header{
+    float: left;
+    height: 50px;
+    background: #ededed;
+    width: 100%;
+    display: -webkit-inline-box;
+}
+header .bot-entrar{
+    border: none;
+    box-shadow: 1px 1px 1px #adadad;
+    outline: none;
+    cursor: pointer;
+    margin-top: 4px;
+    font-size: 12px;
+    display: block;
+    margin-left: 50px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    background: #8b8779;
+    color: white;
+    height: 25px;
+    padding-top: 12px;
+}
+header .bot-entrar:hover{
+    background: #10b510;
+}
+header img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+ }
+.pesquisa{
+    float: left;
+    width: 100%;
+    background: #f7f9f7;
+    height: 40px;
+    text-align: center;
+}
+input{
+    background: white;
+    width: 90%;
+    margin-top: 5px;
+    height: 60%;
+    border-color: #f9f9f9;
+    border-style: solid;
+    border-radius: 5px;
+    outline: none;
+}
+::-webkit-input-placeholder {
+    color: #b5b4b4;
+    padding-left: 10px;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: #b5b4b4;
+    padding-left: 10px;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: #b5b4b4;
+    padding-left: 10px;  
+ }
+ 
+ :-ms-input-placeholder {  
+    color: #b5b4b4;
+    padding-left: 10px;  
+ }
+ .lista{
+    width: 100%;
+    height: 408px;
+    float: left;
+    overflow-y: scroll;
+
+ }
+ .lista{ height:408px; overflow-y:scroll; } /* limitando altura do box */
+ .lista::-webkit-scrollbar { width:7px; background:#e3e0d6; } /* configurando scroll */
+ .lista::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+ .lista::-webkit-scrollbar-thumb { border-radius:10px; background:#8b8778;  }
+ .amigo{
+    height: 60px;
+    width: 100%;
+    border-top: 1px outset #ecedec;
+    cursor: pointer;
+ }
+ .amigo-parte1{
+    width: 22%;
+    float: left;
+ } 
+ .amigo-parte1 img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+ }
+ .amigo-parte2{
+    width: 78%;
+    float: left;
+    margin-top: 5px;
+}
+.amigo-parte2 .nome{
+    color: #888787;
+    font-family: sans-serif;
+    font-size: 15px;
+    display: -webkit-box;
+    cursor: pointer;
+
+ }
+ .amigo-parte2 .numero{
+    color: #888787;
+    font-family: sans-serif;
+    font-size: 12px;
+    display: -webkit-box;
+ }
+ .conversas{
+    width: 69%;
+    height: 500px;
+    float: right;
+    border-bottom-width: 1px;
+    border-color: #ecedec63;
+    border-style: solid;
+    border-left: none;
+ }
+ .titulo-nome{
+    margin-top: 12px;
+    margin-left: 10px;
+    display: flex;
+ }
+ .conversa{
+    position: relative;
+    height: 500px;
+ }
+.text{
+    width: 100%;
+    background: #ecedec;
+    float: left;
+    margin-top: 10px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+}
+.text textarea{
+    border: none;
+    margin: 10px;
+    border-radius: 15px;
+    width: 73%;
+    max-width: 73%;
+    min-width: 73%;
+    float: left;
+    height: 35px;
+    max-height: 35px;
+    min-height: 35px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.text img{
+    float: left;
+    width: 5%;
+    margin: 15px;
+}
+.bot-enviar{
+    float: left;
+    width: 12%;
+    padding: 20px;
+    border: none;
+    box-shadow: 1px 1px 1px #adadad;
+    outline: none;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+/*MODAL */
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.closeModal {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.closeModal:after {
+    content: "\d7";
+}
+
+.closeModal:hover {
+    background: #f00;
+}
+.input-logar{
+    background: white;
+    width: 70%;
+    margin-top: 5px;
+    height: 30px;
+    border-color: #f9f9f9;
+    border-style: solid;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    border: 1px solid #c3c3c3;
+}
+.bot-logar{
+    display: -webkit-box;
+    width: 70%;
+    border: none;
+    height: 30px;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #0099d4;
+    color: white;
+}
+
+/*FIM MODAL*/
+.dialogo{
+    float: right;
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    background: #dbf4c6;
+    padding: 10px;
+    border-radius: 14px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: #4e5449;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.bot-criar{
+    border: none;
+    box-shadow: 1px 1px 1px #adadad;
+    outline: none;
+    cursor: pointer;
+    margin-top: 4px;
+    font-size: 12px;
+    display: block;
+    margin-left: 50px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    background: #8b8779;
+    color: white;
+    height: 25px;
+    padding-top: 12px;
+}
