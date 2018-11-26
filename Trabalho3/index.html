@@ -1,14 +1,460 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+  <meta charset="utf-8">
+  <title>LOJA DE ROUPAS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    
+
+
+  <nav class="navbar navbar-default" style="background-color:#000000;">
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" id="button3" style="color: white;" href="#">Sair</span></a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown" id="dropdown3">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            Cesta
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu cesta" aria-labelledby="dropdownMenu1">
+
+          </ul>
+          <button type="button" id="button5" class="btn btn-success">Finalizar</button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown" id="dropdown1">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            Entrar
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <form method="get" id="form">
+              <div class="form-group">
+                <label class="label">Usuario:</label>
+                <input type="text" class="input form-control" id="usuarioUser">
+              </div>
+              <div class="form-group">
+                <label class="label">Senha</label>
+                <input type="password" class="input form-control" id="senhaUser">
+              </div>
+              <button type="submit" class="bott btn btn-primary" id="submit">Entrar</button>
+              <div class="alert alert-danger erro" role="alert"></div>
+            </form>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown" id="dropdown2">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            Cadastrar
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <form method="post">
+              <div class="form-group">
+                <label class="label">Usuario:</label>
+                <input type="text" class="input form-control" id="usuarioCadastro">
+              </div>
+              <div class="form-group">
+                <label class="label">Senha</label>
+                <input type="password" class="input form-control" id="senhaCadastro">
+              </div>
+              <button type="submit" class="bott btn btn-primary" id="submit2">Cadastrar</button>
+              <div class="alert alert-success sucesso" role="alert"></div>
+            </form>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+
+  <div class="col-md-12">
+    <div class="lista-produtos col-md-10">
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="1.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+          <b>R$ </b><span id="span1">500</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar1">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd1">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="2.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span2">50</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar2">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd2">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="3.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span3">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar3">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd3">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="4.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span4">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar4">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd4">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="5.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span5">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar5">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd5">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="6.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span6">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar6">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd6">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="7.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span7">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar7">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd7">
+          </div>
+        </div>
+      </div>
+
+      <div class="produto col-md-3">
+        <div class="foto-produto">
+          <img src="8.jpg">
+        </div>
+        <div class="preco-produto col-md-12">
+            <b>R$ </b><span id="span8">250</span><b>,00</b>
+        </div>
+        <div class="informacoes">
+          <div class="botao-adicionar" id="botao-adicionar">
+            <button type="button" class=" btn-primary" id="adicionar8">Adicionar</button>
+          </div>
+          <div class="qtd-produto" id="qtd-produto">
+            <input type="number" value="1" placeholder="qtd" name="qtd" id="qtd8">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- </div> -->
+
+    <script>
+      if (localStorage.getItem("usuario") === null) {
+        $("#button").show();
+        $("#button2").show();
+        $("#button3").hide();
+        $("#dropdown3").hide();
+        $(".informacoes").hide();
+        $("#submit").click(function () {
+          event.preventDefault();
+          $.ajax({
+            type: "GET",
+            url: "http://rest.learncode.academy/api/jackson/usuarios",
+            success: function (data) {
+              let usuario = $("#usuarioUser").val();
+              let senha = $("#senhaUser").val();
+              for (let i = 0; i < data.length; i++) {
+                if ((usuario == data[i].usuario) && (senha == data[i].senha)) {
+                  $(".erro").empty();
+                  if (typeof (Storage) !== "undefined") {
+                    localStorage.setItem("usuario", usuario);
+                    history.go(0);
+                    break;
+                  } else {
+                    document.getElementById("spanUser").innerHTML = "Sorry, your browser does not support Web Storage...";
+                  }
+                } else {
+                  let p = $("<p></p>").text("Usuário ou senha inválidos !!");
+                  $(".erro").empty();
+                  $(".erro").append(p);
+                  // $("p").addClass("error");
+                }
+              }
+            }
+          })
+        });
+      } else {
+        $("#dropdown1").hide(100);
+        $("#dropdown2").hide(100);
+        $("#button3").show();
+        $(".informacoes").show();
+        $("#button3").click(function () {
+          localStorage.removeItem("usuario");
+          $("#button3").hide(100);
+          $("#button").show();
+          $("#button2").show();
+          $(".informacoes").hide(100);
+          history.go(0);
+        });
+      }
+
+      $("#submit2").click(function (e) {
+        e.preventDefault();
+        let body = {
+          usuario: $("#usuarioCadastro").val(), senha: $("#senhaCadastro").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/usuarios",
+          data: body,
+          success: function () {
+            $("#usuarioCadastro").val("");
+            $("#senhaCadastro").val("");
+            let p = $("<p></p>").text("Usuário cadastrado com sucesso !!");
+            $(".sucesso").append(p);
+          }
+        })
+      });
+
+      function updateList() {
+        $.ajax({
+          type: "GET",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          success: function (data) {
+            $(".cesta").empty();
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].usuario == localStorage.getItem("usuario")) {
+                insertItem(data[i].valor, data[i].qtd);
+              }
+            }
+          }
+        })
+      }
+
+      function insertItem(valor, qtd) {
+        let p = $("<p></p>").text("Valor: " + valor + " Qtd: " + qtd);
+        p.css("border-bottom", "1px solid black");
+        p.css("padding", "5px");
+        $(".cesta").append(p);
+      }
+      updateList();
+
+      $("#adicionar1").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span1").text(), qtd: $("#qtd1").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd1").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#adicionar2").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span2").text(), qtd: $("#qtd2").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd2").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#adicionar3").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span3").text(), qtd: $("#qtd3").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd3").val("");
+            updateList();
+          }
+        })
+      });
+
+
+      $("#adicionar4").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span4").text(), qtd: $("#qtd4").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd4").val("");
+            updateList();
+          }
+        })
+      });
+
+
+      $("#adicionar5").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span5").text(), qtd: $("#qtd5").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd5").val("");
+            updateList();
+          }
+        })
+      });
+
+
+      $("#adicionar6").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span6").text(), qtd: $("#qtd6").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd6").val("");
+            updateList();
+          }
+        })
+      });
+
+
+      $("#adicionar7").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span7").text(), qtd: $("#qtd7").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd7").val("");
+            updateList();
+          }
+        })
+      });
+
+
+      $("#adicionar8").click(function () {
+        alert("INSERIDO COM SUCESSO")
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor: $("#span8").text(), qtd: $("#qtd8").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/produtos",
+          data: body,
+          success: function () {
+            $("#qtd8").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#button5").click(function () {
+        if ($(".cesta").text() != "") {
+          window.location.href = "compras.html";
+        }
+      });
+    </script>
 </body>
+
 </html>

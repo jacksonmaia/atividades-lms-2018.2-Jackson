@@ -7,57 +7,57 @@
     <title>Trabalho 2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="amigos" id="amigo">
             <header>
-                <div class="header-parte1"><img src="user.png" /></div>
-                <h4>Jackson Maia</h4>
-                <a href="#openModal" class="bot-entrar">Entrar</a>
+                <div class="header-parte1"><img id="img_user"  /></div>
+                <h4 id="user"></h4>
+                <a href="#openModal" id="entrar" class="bot-entrar"></a>
             </header>
             <div class="pesquisa">
-                <input type="text" placeholder="Procurar ou começar conversa" />
-                <input type="text" placeholder="Procurar ou começar conversa" /> 
-            <button class="bot-criar">Criar grupo</button>    
+                <input type="text" name="id" id="id" placeholder="ID do Grupo" />
+                <input type="text" name="nome" id="nome" placeholder="Nome do Grupo" /> 
+                <button id="bot" class="bot-criar">Criar grupo</button>    
             </div>
-           
+            
             <div class="lista" id="lista">
-
-
+                
+                
             </div>
         </div>
         <div class="conversas">
             <div class="conversa">
                 <header>
-                    <div class="header-parte1"><img src="user.png" /></div>
-                    <label class="titulo-nome">Nome Sobre</label>
+                    <div class="header-parte1"><img id="icon" /></div>
+                    <label id="name_top_grop" class="titulo-nome"></label>
                 </header>
-                <div class="chat" id="chat">
-
+                <div id="chat" class="chat" >
+                    
                 </div>
                 <div class="text">
                     <img src="icon.png" />
-                    <form>
-                        <textarea></textarea>
-                        <button class="bot-enviar">Enviar</button>
-                    </form>
+                        <textarea id="text" disabled></textarea>
+                        <button id= "bot_text" disabled class="bot-enviar">Enviar</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <script src="main.js"></script>
 </body>
 
 <div id="openModal" class="modalDialog">
     <div style="text-align: center;">
-        <a href="#close" title="Close" class="closeModal"></a>
+            <a href="#close" title="Close" class="closeModal"></a>
         <!-- Conteúdo do Modal -->
         <h2>Logar no sistema</h2>
         <form>
-            <input type="text" class="input-logar" placeholder="Insira ID do Usuario">
-            <button class="bot-logar">Entrar no sistema</button>
+            <input type="text" id="logar_inp" class="input-logar" placeholder="Insira ID do Usuario">
+            <button id="logar" class="bot-logar">Entrar no sistema</button>
         </form>
         <hr>
         <!-- Conteúdo do Modal -->

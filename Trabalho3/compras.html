@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>LOJA DE ROUPAS</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="main.css">
+    </head>
+
+  <body>
+    <div class="finalizar">
+      <span id="textoValorTotal"></span><span id="valorTotal"></span><p id="texto0"></p>
+      <input type="hidden" id="dataHora">
+      <button type="button" class="btn btn-success" id="button">Finalizar Compras</button>
+
+    </div>
+
+    <script type="text/javascript">
+      function preencher(nome, qtd, valor){
+        let p1 = $("<p></p>").text("Comprador: " + nome);
+        let p2 = $("<p></p>").text("Quantidade do produto: " + qtd);
+        let p3 = $("<p></p>").text("Valor do produto " + "R$ " + valor + ",00");
+        let div = $("<div></div>");
+        p1.css("margin", "5px");
+        p2.css("margin", "5px");
+        p3.css("margin", "5px");
+        div.append(p1);
+        div.append(p2);
+        div.append(p3);
+        div.css("border-bottom", "1px solid black");
+        $(".finalizar").append(div);
+      }
+
+      $.ajax({
+        type: "GET",
+        url: "http://rest.learncode.academy/api/jackson/produtos",
+        success: function (data) {
+          let valorTotal = 0;
+          for(let i=0; i<data.length; i++){
+            if(data[i].usuario == localStorage.getItem("usuario")){
+              valorTotal += (parseFloat(data[i].qtd) * parseFloat(data[i].valor));
+              preencher(data[i].usuario, data[i].qtd, data[i].valor);
+            }
+          }
+          $("#textoValorTotal").text("Valor total da compra é: R$ ");
+          $("#valorTotal").text(valorTotal);
+          $("#texto0").text(",00");
+
+        }
+      })
+
+      $("#button").click(function(){
+        let d = new Date();
+        let body = {
+          usuario: localStorage.getItem("usuario"), valorTotal:$("#valorTotal").text(),
+          data:d.toLocaleString()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/jackson/compras",
+          data: body,
+          success: function () {
+
+          }
+        })
+      });
+    </script>
+  </body>
+</html>
