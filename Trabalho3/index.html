@@ -30,6 +30,7 @@
           <ul class="dropdown-menu cesta" aria-labelledby="dropdownMenu1">
 
           </ul>
+          <button type="button" id="button6" class="btn btn-info">Ver compras</button>
           <button type="button" id="button5" class="btn btn-success">Finalizar</button>
         </div>
       </li>
@@ -230,6 +231,7 @@
         $("#button").show();
         $("#button2").show();
         $("#button3").hide();
+        $("#button6").hide();
         $("#dropdown3").hide();
         $(".informacoes").hide();
         $("#submit").click(function () {
@@ -264,12 +266,14 @@
         $("#dropdown1").hide(100);
         $("#dropdown2").hide(100);
         $("#button3").show();
+        $("#button6").show();
         $(".informacoes").show();
         $("#button3").click(function () {
           localStorage.removeItem("usuario");
           $("#button3").hide(100);
           $("#button").show();
           $("#button2").show();
+          $("#button6").hide();
           $(".informacoes").hide(100);
           history.go(0);
         });
@@ -292,6 +296,10 @@
           }
         })
       });
+      
+      $("#button6").click(function (){
+        window.location.href = "compras_feitas.html";
+      })
 
       function updateList() {
         $.ajax({

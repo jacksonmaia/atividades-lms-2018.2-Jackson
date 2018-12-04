@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Compras Feitas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+          
+    <body>
+        <div class="container" id="container">
+        
+        </div>
+        
+        <script>
+
+            function comprasDone(data, valorTotal){        
+
+                let container = document.getElementById("container");
+                console.log(container);
+                
+                let div1 = document.createElement("div");
+                $(div1).addClass('panel panel-default');
+                console.log(div1);
+                
+                let div2 = document.createElement("div");
+                $(div2).addClass('panel-body');
+                let h1 = document.createElement("h1");
+                let p1 = document.createElement("p");
+
+                let textoData = document.createTextNode("Data da compra: " + data);
+                let textoValor = document.createTextNode("valor total da compra: " + valorTotal);                
+                h1.append(textoValor);
+                p1.append(textoData);
+                div2.append(h1);
+                div2.append(p1);
+                div1.append(div2);
+                container.append(div1);
+            }
+
+            $.ajax({
+                type: "GET",
+                url: "http://rest.learncode.academy/api/jackson/compras",
+                success: function (data) {
+                    let valorTotal = 0;
+                    for(let i=0; i < data.length; i++){
+                        comprasDone(data[i].data, data[i].valorTotal);
+                    }
+
+                }
+            })
+        </script>
+    </body>
+</html>

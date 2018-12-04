@@ -59,12 +59,27 @@
           usuario: localStorage.getItem("usuario"), valorTotal:$("#valorTotal").text(),
           data:d.toLocaleString()
         };
+        console.log(body);
+        
         $.ajax({
           type: "POST",
           url: "http://rest.learncode.academy/api/jackson/compras",
           data: body,
-          success: function () {
+          success: function () {            
+            alert("Compra finalizada com sucesso");
+            window.location.href = "index.html";
+            $.ajax({
+              type: 'GET',
+              url: 'http://rest.learncode.academy/api/jackson/produtos',
+              success: function (data) {
+                for(let i=0; i < data.length; i++){
+                  data[i].innerHTML == "";
+                  console.log(data);
+                  
+                }
 
+              }
+            })
           }
         })
       });
